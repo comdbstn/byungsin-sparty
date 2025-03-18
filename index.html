@@ -15,10 +15,10 @@
         <!-- 헤더 섹션 -->
         <header class="header">
             <div class="header-content">
-                <h1 class="main-title">⚽ 축구와 설렘 한방에! ⚽</h1>
-                <p class="subtitle">🍻 나만 솔로 X FIFA 월드컵 특별 이벤트 🍻</p>
+                <h1 class="main-title">너랑 스포츠 (12회)</h1>
+                <p class="subtitle">🍻 축구와 함께하는 특별한 만남 🍻</p>
                 <div class="header-desc">
-                    <p>💕 "혼자 보기 아쉬운 월드컵, 설레는 만남과 함께 즐겨보세요!"</p>
+                    <p>💕 "매 경기마다 특별한 만남을 만들어온 파티단의 6번째 축구 파티!"</p>
                     <p>2025년 3월 20일, 홍대에서 축구 열정과 로맨스가 가득한 밤을 만들어 보세요!</p>
                 </div>
             </div>
@@ -101,9 +101,8 @@
         <section class="refund">
             <h2 class="section-title">환불 규정</h2>
             <div class="refund-info">
-                <p>3일 전 - 100% 환불</p>
-                <p>1일 전 - 50% 환불</p>
-                <p>당일은 환불 불가</p>
+                <p>당일 전까지 - 100% 환불</p>
+                <p>당일 - 환불 불가</p>
             </div>
         </section>
 
@@ -113,20 +112,23 @@
             <div class="review-slider">
                 <div class="review-card">
                     <div class="review-content">
+                        <img src="public/images/review1.jpg" alt="리뷰 이미지 1" class="review-image">
                         <p>"우리나라가 골을 넣었을 때 자연스럽게 하이파이브 했는데, 그게 인연의 시작이었어요!"</p>
-                        <div class="reviewer">- 박골인 (28세)</div>
+                        <div class="reviewer">- 박골인 (23세)</div>
                     </div>
                 </div>
                 <div class="review-card">
                     <div class="review-content">
+                        <img src="public/images/review2.jpg" alt="리뷰 이미지 2" class="review-image">
                         <p>"축구 얘기로 자연스럽게 대화가 시작되어 부담 없이 만남을 이어갈 수 있었어요."</p>
-                        <div class="reviewer">- 이축구 (31세)</div>
+                        <div class="reviewer">- 이축구 (25세)</div>
                     </div>
                 </div>
                 <div class="review-card">
                     <div class="review-content">
+                        <img src="public/images/review3.jpg" alt="리뷰 이미지 3" class="review-image">
                         <p>"축구를 좋아하는 여자친구를 만나고 싶었는데, 정말 최고의 선택이었습니다!"</p>
-                        <div class="reviewer">- 김응원 (26세)</div>
+                        <div class="reviewer">- 김응원 (21세)</div>
                     </div>
                 </div>
             </div>
@@ -137,49 +139,13 @@
             <div class="signup-card">
                 <h2 class="section-title">🚨 선착순 40명! 남녀 각 20명씩! 🚨</h2>
                 <p class="signup-desc">마감 전에 서둘러 신청하세요!</p>
-                <form id="registrationForm" class="signup-form">
-                    <div class="form-group">
-                        <label for="nickname">닉네임 (필수)</label>
-                        <input type="text" id="nickname" name="nickname" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="gender">성별 (필수)</label>
-                        <select id="gender" name="gender" required>
-                            <option value="" disabled selected>선택해주세요</option>
-                            <option value="male">남성</option>
-                            <option value="female">여성</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="age">나이 (필수)</label>
-                        <input type="number" id="age" name="age" min="20" max="39" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">연락처 (필수)</label>
-                        <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="team">응원 팀 (필수)</label>
-                        <select id="team" name="team" required>
-                            <option value="" disabled selected>선택해주세요</option>
-                            <option value="korea">대한민국</option>
-                            <option value="other">기타 국가</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="participationType">참가 유형 (필수)</label>
-                        <select id="participationType" name="participationType" required>
-                            <option value="" disabled selected>선택해주세요</option>
-                            <option value="individual">개인 참가 (15,000원)</option>
-                            <option value="withFriend">친구와 함께 (12,000원/인)</option>
-                        </select>
-                    </div>
-                    <div class="form-group" id="friendNameGroup" style="display: none;">
-                        <label for="friendName">친구 닉네임</label>
-                        <input type="text" id="friendName" name="friendName">
-                    </div>
-                    <button type="submit" class="submit-btn">신청하기</button>
-                </form>
+                <div class="typeform-container">
+                    <iframe src="https://form.typeform.com/to/npX1ynXF" 
+                            style="border: none; width: 100%; height: 500px;"
+                            allow="camera; microphone; autoplay; encrypted-media;"
+                            loading="lazy">
+                    </iframe>
+                </div>
             </div>
         </section>
 
