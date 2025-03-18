@@ -1,0 +1,645 @@
+/* 기본 설정 */
+:root {
+    --primary-color: #ff6b98;
+    --primary-light: #ffa6c9;
+    --primary-dark: #d94d82;
+    --secondary-color: #9c27b0;
+    --accent-color: #ff3d71;
+    --text-color: #333;
+    --light-text: #fff;
+    --dark-bg: #222;
+    --light-bg: #fff;
+    --gradient-bg: linear-gradient(135deg, #ff6b98 0%, #ff3d71 50%, #ff85a2 100%);
+    --card-gradient: linear-gradient(135deg, rgba(255, 166, 201, 0.7) 0%, rgba(255, 107, 152, 0.8) 100%);
+    --box-shadow: 0 10px 20px rgba(255, 61, 113, 0.2);
+}
+
+/* 전체 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #fdf2f7;
+    color: var(--text-color);
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ffecf3 0%, #fff8fb 100%);
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin: 15px 0;
+    color: var(--primary-dark);
+}
+
+section {
+    padding: 50px 0;
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--primary-dark);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--gradient-bg);
+    border-radius: 3px;
+}
+
+/* 헤더 스타일 */
+.header {
+    background: var(--gradient-bg);
+    color: var(--light-text);
+    text-align: center;
+    padding: 70px 0;
+    border-radius: 0 0 50% 50% / 20px;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before, .header::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 0;
+}
+
+.header::before {
+    top: -100px;
+    left: -100px;
+}
+
+.header::after {
+    bottom: -100px;
+    right: -100px;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    color: var(--light-text);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: var(--light-text);
+}
+
+.header-desc {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* 이벤트 정보 섹션 */
+.event-info {
+    margin-top: -30px;
+}
+
+.info-card {
+    background-color: var(--light-bg);
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.info-item {
+    flex: 1 0 30%;
+    text-align: center;
+    padding: 15px;
+    min-width: 200px;
+}
+
+.info-item h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.info-item i {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+/* 혜택 섹션 */
+.benefits {
+    background: linear-gradient(135deg, #fffafd 0%, #fff5f9 100%);
+    padding: 60px 0;
+    position: relative;
+}
+
+.benefits::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 107, 152, 0.05) 0%, rgba(255, 61, 113, 0.05) 100%);
+    z-index: 0;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.benefit-item {
+    background: var(--light-bg);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 107, 152, 0.2);
+}
+
+.benefit-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.benefit-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* 가격 섹션 */
+.pricing {
+    text-align: center;
+    padding: 60px 0;
+    background: linear-gradient(135deg, #fff 0%, #fff9fc 100%);
+}
+
+.price-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.price-card {
+    background: var(--light-bg);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    max-width: 300px;
+    min-width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.price-card:hover {
+    transform: scale(1.05);
+}
+
+.price-card.highlight {
+    background: var(--card-gradient);
+    color: var(--light-text);
+}
+
+.price-card h3 {
+    font-size: 1.4rem;
+    color: inherit;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.highlight .price {
+    color: var(--light-text);
+}
+
+.price-desc {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.deadline {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary-dark);
+}
+
+/* 주의사항 섹션 */
+.caution {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #333 100%);
+    color: var(--light-text);
+    padding: 60px 0;
+    position: relative;
+}
+
+.caution .section-title {
+    color: var(--primary-light);
+}
+
+.caution-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.caution-list {
+    list-style: none;
+    font-size: 1.2rem;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.caution-list li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.caution-list li::before {
+    content: '⚠️';
+    position: absolute;
+    left: -10px;
+}
+
+.quote {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.quote p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.quote-author {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* 환불 규정 */
+.refund {
+    background: linear-gradient(135deg, #f9f9f9 0%, #f5f5f5 100%);
+    padding: 50px 0;
+}
+
+.refund-info {
+    background: var(--light-bg);
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.refund-info p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+/* 리뷰 섹션 */
+.reviews {
+    padding: 70px 0;
+    background: linear-gradient(135deg, #fff5f9 0%, #ffecf3 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.review-slider {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.review-card {
+    background: var(--light-bg);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    max-width: 320px;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 107, 152, 0.2);
+}
+
+.review-content p {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.reviewer {
+    text-align: right;
+    font-weight: 500;
+    color: var(--primary-dark);
+}
+
+/* 신청 폼 */
+.signup {
+    padding: 70px 0;
+    background: var(--gradient-bg);
+    color: var(--light-text);
+    position: relative;
+}
+
+.signup-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--text-color);
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.signup-desc {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+}
+
+.signup-form {
+    display: grid;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input, .form-group select {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.submit-btn {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.submit-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+}
+
+/* 푸터 */
+.footer {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #2a2a2a 100%);
+    color: #888;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+/* 애니메이션 요소 */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.main-title {
+    animation: pulse 3s infinite ease-in-out;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 50px 0;
+    }
+
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .header-desc {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .info-item {
+        flex: 1 0 100%;
+    }
+
+    .benefit-item {
+        padding: 20px;
+    }
+
+    .price-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .price-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .signup-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+
+    .header {
+        padding: 40px 0;
+    }
+
+    .info-card, .signup-card {
+        padding: 20px 15px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .review-card {
+        max-width: 100%;
+    }
+
+    .submit-btn {
+        padding: 12px;
+    }
+}
+
+/* 홀로그램 효과 토글 레이어 */
+.holographic-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 0, 153, 0.1) 0%,
+        rgba(0, 255, 255, 0.1) 25%,
+        rgba(255, 0, 255, 0.1) 50%,
+        rgba(255, 255, 0, 0.1) 75%,
+        rgba(255, 0, 153, 0.1) 100%
+    );
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+    display: none;
+} 
