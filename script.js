@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const formEntries = Object.fromEntries(formData.entries());
             
             // 간단한 유효성 검사
-            if (!formEntries.nickname || !formEntries.gender || !formEntries.age || !formEntries.phone) {
+            if (!formEntries.nickname || !formEntries.gender || !formEntries.age || !formEntries.phone || !formEntries.team) {
                 alert('모든 필수 항목을 입력해주세요!');
                 return;
             }
             
             // 여기서 실제 서버로 데이터를 전송하는 코드가 들어갈 수 있습니다
             // 지금은 확인 메시지만 표시합니다
-            showSuccessMessage();
+            showSuccessMessage(formEntries.team);
         });
     }
 
@@ -36,22 +36,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 성공 메시지 모달
-    function showSuccessMessage() {
+    function showSuccessMessage(team) {
         // 모달 생성
         const modal = document.createElement('div');
         modal.className = 'success-modal';
+        
+        // 팀에 따라 다른 메시지 표시
+        const teamMsg = team === 'korea' ? '대한민국 화이팅! 🇰🇷' : '멋진 경기를 함께 응원해요! 🌍';
         
         // 모달 내용
         modal.innerHTML = `
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2>🎉 신청이 완료되었습니다! 🎉</h2>
+                    <h2>⚽ 신청이 완료되었습니다! ⚽</h2>
                     <span class="close-btn">&times;</span>
                 </div>
                 <div class="modal-body">
                     <p>축하합니다! 성공적으로 신청되었습니다.</p>
-                    <p>곧 확인 이메일이 발송될 예정입니다.</p>
-                    <p>기대해주세요! 🍻</p>
+                    <p>${teamMsg}</p>
+                    <p>3월 20일 행사장에서 뵙겠습니다!</p>
                 </div>
             </div>
         `;
@@ -100,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             .modal-header h2 {
-                color: #ff6b98;
+                color: #1a7a04;
                 text-align: center;
                 margin: 0;
             }
@@ -111,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 right: -10px;
                 font-size: 28px;
                 cursor: pointer;
-                color: #ff6b98;
+                color: #1a7a04;
             }
             
             .modal-body {
@@ -144,6 +147,41 @@ document.addEventListener('DOMContentLoaded', function() {
                 form.reset(); // 폼 초기화
             }
         });
+    }
+
+    // 축구공 애니메이션 추가
+    createSoccerBallAnimation();
+    
+    function createSoccerBallAnimation() {
+        const soccerBall = document.createElement('div');
+        soccerBall.className = 'soccer-ball-animation';
+        soccerBall.innerHTML = '⚽';
+        document.body.appendChild(soccerBall);
+        
+        const ballStyle = document.createElement('style');
+        ballStyle.textContent = `
+            .soccer-ball-animation {
+                position: fixed;
+                font-size: 30px;
+                bottom: -30px;
+                left: 50%;
+                transform: translateX(-50%);
+                animation: kick 10s infinite ease-in-out;
+                z-index: 999;
+                pointer-events: none;
+            }
+            
+            @keyframes kick {
+                0% { bottom: -30px; left: 10%; transform: rotate(0deg); }
+                20% { bottom: 80vh; left: 30%; transform: rotate(180deg); }
+                40% { bottom: 20vh; left: 70%; transform: rotate(360deg); }
+                60% { bottom: 60vh; left: 40%; transform: rotate(540deg); }
+                80% { bottom: 30vh; left: 80%; transform: rotate(720deg); }
+                100% { bottom: -30px; left: 10%; transform: rotate(900deg); }
+            }
+        `;
+        
+        document.head.appendChild(ballStyle);
     }
 
     // 애니메이션 및 스크롤 효과

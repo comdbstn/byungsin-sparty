@@ -3,13 +3,14 @@
     --primary-color: #ff6b98;
     --primary-light: #ffa6c9;
     --primary-dark: #d94d82;
-    --secondary-color: #9c27b0;
-    --accent-color: #ff3d71;
+    --secondary-color: #1a7a04;
+    --accent-color: #009688;
     --text-color: #333;
     --light-text: #fff;
     --dark-bg: #222;
     --light-bg: #fff;
     --gradient-bg: linear-gradient(135deg, #ff6b98 0%, #ff3d71 50%, #ff85a2 100%);
+    --soccer-gradient: linear-gradient(135deg, #1a7a04 0%, #29b507 50%, #52c234 100%);
     --card-gradient: linear-gradient(135deg, rgba(255, 166, 201, 0.7) 0%, rgba(255, 107, 152, 0.8) 100%);
     --box-shadow: 0 10px 20px rgba(255, 61, 113, 0.2);
 }
@@ -82,7 +83,8 @@ section {
 
 /* 헤더 스타일 */
 .header {
-    background: var(--gradient-bg);
+    background: var(--gradient-bg), url('https://i.imgur.com/O7ZWigt.jpg') center/cover;
+    background-blend-mode: multiply;
     color: var(--light-text);
     text-align: center;
     padding: 70px 0;
@@ -193,7 +195,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(255, 107, 152, 0.05) 0%, rgba(255, 61, 113, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(26, 122, 4, 0.05) 0%, rgba(82, 194, 52, 0.05) 100%);
     z-index: 0;
 }
 
@@ -245,6 +247,15 @@ section {
     margin-bottom: 30px;
 }
 
+.price-card::before {
+    content: '⚽';
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 30px;
+    transform: rotate(30deg);
+}
+
 .price-card {
     background: var(--light-bg);
     border-radius: 15px;
@@ -254,6 +265,8 @@ section {
     max-width: 300px;
     min-width: 250px;
     transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .price-card:hover {
@@ -378,6 +391,16 @@ section {
     overflow: hidden;
 }
 
+.reviews::after {
+    content: '⚽';
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 80px;
+    opacity: 0.1;
+    transform: rotate(-15deg);
+}
+
 .review-slider {
     display: flex;
     flex-wrap: wrap;
@@ -472,7 +495,7 @@ section {
 .submit-btn {
     margin-top: 20px;
     padding: 15px;
-    background: var(--primary-color);
+    background: var(--secondary-color);
     color: white;
     border: none;
     border-radius: 8px;
@@ -483,7 +506,7 @@ section {
 }
 
 .submit-btn:hover {
-    background: var(--primary-dark);
+    background: #146603;
     transform: translateY(-3px);
 }
 
